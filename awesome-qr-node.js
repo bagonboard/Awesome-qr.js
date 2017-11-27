@@ -1042,10 +1042,10 @@ var Drawing = (function() { // Drawing in Canvas
         var _mContext = undefined;
 
         if (_htOption.backgroundImage !== undefined) {
-            console.log("No bkg");
+            // console.log("No bkg");
             if (_htOption.autoColor) {
-                console.log(typeof(_htOption.backgroundImage));
-                console.log(_htOption.backgroundImage);
+                // console.log(typeof(_htOption.backgroundImage));
+                // console.log(_htOption.backgroundImage);
                 var avgRGB = getAverageRGB(_htOption.backgroundImage);
                 _htOption.colorDark = "rgb(" + avgRGB.r + ", " + avgRGB.g + ", " + avgRGB.b + ")";
             }
@@ -1082,7 +1082,7 @@ var Drawing = (function() { // Drawing in Canvas
                 _bContext.fill();
             }
         } else {
-            console.log("has bkg");
+            // console.log("has bkg");
             _bContext.rect(0, 0, size, size);
             _bContext.fillStyle = "#ffffff";
             _bContext.fill();
@@ -1126,7 +1126,7 @@ var Drawing = (function() { // Drawing in Canvas
             }
         }
 
-        console.log("POSITION protectors");
+        // console.log("POSITION protectors");
         // Draw POSITION protectors
         var protectorStyle = "rgba(255, 255, 255, 0.6)";
         _oContext.fillStyle = protectorStyle;
@@ -1136,7 +1136,7 @@ var Drawing = (function() { // Drawing in Canvas
         _oContext.fillRect(8 * nSize, 6 * nSize, (nCount - 8 - 8) * nSize, nSize);
         _oContext.fillRect(6 * nSize, 8 * nSize, nSize, (nCount - 8 - 8) * nSize);
 
-        console.log("ALIGN protectors");
+        // console.log("ALIGN protectors");
         // Draw ALIGN protectors
         var edgeCenter = agnPatternCenter[agnPatternCenter.length - 1];
         for (var i = 0; i < agnPatternCenter.length; i++) {
@@ -1364,7 +1364,7 @@ AwesomeQRCode = function() {};
 
 AwesomeQRCode.prototype.create = function(vOption) {
 
-    console.log(vOption);
+    // console.log(vOption);
     try {
         this._htOption = {
             size: 800,
@@ -1381,7 +1381,7 @@ AwesomeQRCode.prototype.create = function(vOption) {
             callback: undefined
         };
 
-        console.log("validating");
+        // console.log("validating");
         if (typeof vOption === 'string') {
             vOption = {
                 text: vOption
@@ -1399,14 +1399,14 @@ AwesomeQRCode.prototype.create = function(vOption) {
             if (this._htOption.text) {
                 this.makeCode(this._htOption.text);
             } else {
-                console.log("no text");
+                // console.log("no text");
                 if (this._callback !== undefined && typeof(this._callback) === "function") {
                     this._callback(undefined);
                 }
             }
         }
     } catch (e) {
-        console.error(e);
+        // console.error(e);
         if (this._callback !== undefined && typeof(this._callback) === "function") {
             this._callback(undefined);
         }
